@@ -21,17 +21,17 @@ app.all("/menus/*", function(req, res) {
 });
 
 app.all("/menusBundle.js", function(req, res) {
-    // console.log('redirecting to Server2');
+    console.log('menu redirecting to Server1');
     apiProxy.web(req, res, {target: ServerOne});
 });
 
-app.all("/restuarant/:restaurantID/overview", function(req, res) {
-    console.log('redirecting to Server2');
+app.all("/*/overview", function(req, res) {
+    console.log('overview redirecting to Server2');
     apiProxy.web(req, res, {target: ServerTwo});
 });
 
-app.all("/restuarant/:restaurantID/reviews", function(req, res) {
-    console.log('redirecting to Server3');
+app.all("/*/reviews", function(req, res) {
+    console.log('reviews redirecting to Server3');
     apiProxy.web(req, res, {target: ServerThree});
 });
 
