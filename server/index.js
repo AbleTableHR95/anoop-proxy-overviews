@@ -4,10 +4,38 @@ const httpProxy = require('http-proxy');
 const apiProxy = httpProxy.createProxyServer();
 
 const app = express();
-app.use(express())
+app.use(express.json())
 const port = process.env.PORT || 8000;
 
 app.use('/restaurant/:restaurantId', express.static(path.join(__dirname, '../public')));
+
+// const clientBundles = '../public/services'; //???not found
+// const serverBundles = '../templates/services';
+// const serviceConfig = require('../service-config.json');
+// const services = require('../loader.js')(clientBundles, serverBundles, serviceConfig);
+
+// const React = require('react');
+// const ReactDom = require('react-dom/server');
+// const Layout = require('../templates/layout');
+// const App = require('../templates/app');
+// const Scripts = require('../templates/scripts');
+
+// const renderComponents = (components, props = {}) => {
+//     return Object.keys(components).map(item => {
+//       let component = React.createElement(components[item], props);
+//       return ReactDom.renderToString(component);
+//     });
+// };
+
+// app.get('/restaurant/:restaurantId', function(req, res) {
+//     let components = renderComponents(services, {itemid: req.params.id});
+//     res.end(Layout(
+//       'SDC Demo',
+//       App(...components),
+//       Scripts(Object.keys(services))
+//     ));
+// });
+
 
 const ServerOne = 'http://ec2-52-90-53-154.compute-1.amazonaws.com:3005';
 //const ServerOne = 'http://localhost:3005';
