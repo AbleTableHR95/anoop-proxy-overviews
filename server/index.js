@@ -37,7 +37,8 @@ app.use('/restaurant/:restaurantId', express.static(path.join(__dirname, '../pub
 // });
 
 
-const ServerOne = 'http://ec2-52-90-53-154.compute-1.amazonaws.com:3005';
+const ServerOne = 'http://ec2-54-210-50-27.compute-1.amazonaws.com';
+//'http://ec2-52-90-53-154.compute-1.amazonaws.com:3005';
 //const ServerOne = 'http://localhost:3005';
 const ServerTwo = 'http://ec2-52-201-248-49.compute-1.amazonaws.com:3000'; //overview
 const ServerThree = 'http://ec2-35-183-93-87.ca-central-1.compute.amazonaws.com:3000';
